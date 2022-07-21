@@ -1,0 +1,165 @@
+
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark fixed-top" >
+    <a class="navbar-brand" href="#">Diabetes Prediction</a>
+  </nav>
+  <form #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit(userForm)"  *ngIf="flag1">
+    <div class="form-group" style="padding:70px 5px 50px 50px;">
+      <label>Age</label>
+      <input type="text" name="age" class="form-control"  [(ngModel)]="model.age" #age="ngModel"[ngClass]="{ 'is-invalid': userForm.submitted && age.invalid }" required>
+      <div class="invalid-feedback" *ngIf="userForm.submitted && age.invalid">
+        <p>Age is required</p>
+      </div>
+    </div>
+    
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+      <label>Gender</label>
+      <select class="form-control" name="gender" [(ngModel)]="Gender" #gender="ngModel"[ngClass]="{ 'is-invalid': userForm.submitted && gender.invalid }" required>
+          <option value="" disabled>Select an option</option>
+          <option *ngFor="let select of Gender" [value]="select" >
+            {{select}}
+          </option>
+        </select>
+        <div class="invalid-feedback" *ngIf="userForm.submitted && gender.invalid">
+          <p>Gender is required</p>
+        </div>
+  </div>
+    <div class="form-group" style="padding:5px 5px 50px 50px;">
+      <label>Polyuria (more pee than normal)</label>
+      <select class="form-control" name="polyuria" [(ngModel)]="Polyuria">
+        <option value="">Select an option</option>
+        <option *ngFor="let select of Polyuria" [value]="select">
+          {{select}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+      <label>Polydipsia (thirst even after drinking water)</label>
+      <select class="form-control" name="polydipsia" [(ngModel)]="Poldipsia">
+        <option value="">Select an option</option>
+        <option *ngFor="let select of Poldipsia" [value]="select">
+          {{select}}
+        </option>
+      </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Sudden weight loss</label>
+        <select class="form-control" name="weightloss" [(ngModel)]="Weightloss">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Weightloss" [value]="select">
+              {{select}}
+            </option>
+          </select>
+      </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Weakness</label>
+        <select class="form-control" name="weakness" [(ngModel)]="Weakness">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Weakness" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Polyphagia (eat excess amounts of food)</label>
+        <select class="form-control" name="polyphagia" [(ngModel)]="Polphagia">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Polphagia" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Genital thrush</label>
+        <select class="form-control" name="genital" [(ngModel)]="Genital">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Genital" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Visual blurring</label>
+        <select class="form-control" name="visual" [(ngModel)]="Visual">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Visual" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Itching</label>
+        <select class="form-control" name="itching" [(ngModel)]="Itching">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Itching" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Irritablility</label>
+        <select class="form-control" name="irritability" [(ngModel)]="Irritability">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Irritability" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Delayed healing</label>
+        <select class="form-control" name="delayed" [(ngModel)]="Healing">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Healing" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Partial paresis (weak muscles)</label>
+        <select class="form-control" name="paresis" [(ngModel)]="Paresis">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Paresis" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Muscle stifness</label>
+        <select class="form-control" name="stifness" [(ngModel)]="Stifness">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Stifness" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Hair loss</label>
+        <select class="form-control" name="alopecia" [(ngModel)]="Alopecia">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Alopecia" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+    <div class="form-group"style="padding:5px 5px 50px 50px;">
+        <label>Obesity</label>
+        <select class="form-control" name="obesity" [(ngModel)]="Obesity">
+            <option value="">Select an option</option>
+            <option *ngFor="let select of Obesity" [value]="select">
+              {{select}}
+            </option>
+          </select>
+    </div>
+
+    <div class="form-group" style="padding:5px 5px 50px 50px;">
+      <button class="btn btn-danger btn-block">Submit</button>
+    </div>
+  </form>
+  <div *ngIf="!flag1 " style="padding:70px 5px 50px 50px; ">
+    <div *ngIf="!decision" style="padding:5px 5px 50px 50px;background-color:powderblue">
+        You don't have Diabetes
+    </div>
+
+    <div *ngIf="decision" style="padding:5px 5px 50px 50px; background-color:rgba(255, 72, 0, 0.897)">
+      You have a strong chance of Diabetes, get yourself checked
+    </div>
+  </div>
